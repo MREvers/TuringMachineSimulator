@@ -41,6 +41,7 @@ void main()
 	DString input("#");
 	input = (input + (new DChar("#*", std::vector < std::string> { "2","2" })) +
 		(new DChar("1", std::vector < std::string> { "1" })) +
+		"1" +
 		(new DChar("#*", std::vector < std::string> { "2" })) +
 		(new DChar("_", std::vector < std::string> { "1",})) + 
 		(new DChar("#*", std::vector < std::string> { "2" })) +
