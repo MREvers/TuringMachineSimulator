@@ -63,7 +63,7 @@ void MachineTape::setHeadPosition(int iHeadPos)
     {
         while (m_iHeaderPos != iHeadPos)
         {
-            performTransform(RIGHT, new DChar('_', 0));
+            performTransform(RIGHT, new DChar("_", 0));
         }
     }
     else

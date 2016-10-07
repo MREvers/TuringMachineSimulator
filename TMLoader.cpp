@@ -90,7 +90,7 @@ bool TMLoader::loadTFFile(std::string fileName, std::vector<TransitionFunction*>
                     for (int i = 1; i < splitLine.size(); i++)
                     {
 						std::vector<std::string> headers = this->parseHeads(splitLine[i]);
-                        domainHeadValues.push_back(new DChar(splitLine[i][0], headers));
+                        domainHeadValues.push_back(new DChar(parseBase(splitLine[i]), headers));
                     }
                     readingState = 4;
                 }
@@ -100,7 +100,7 @@ bool TMLoader::loadTFFile(std::string fileName, std::vector<TransitionFunction*>
                     for (int i = 1; i <= numTapes; i++)
                     {
 						std::vector<std::string> headers = this->parseHeads(splitLine[i]);
-                        rangeHeadValues.push_back(new DChar(splitLine[i][0], headers));
+                        rangeHeadValues.push_back(new DChar(parseBase(splitLine[i]), headers));
                     }
                     for (int i = numTapes + 1; i < splitLine.size(); i++)
                     {
@@ -132,6 +132,18 @@ std::vector<std::string> TMLoader::parseHeads(std::string szInput) const
 		lstRetVal.push_back(headString);
 	}
 	return lstRetVal;
+}
+
+std::string TMLoader::parseBase(std::string szInput) const
+{
+	std::string szRetVal;
+	int i = 0;
+	while (i < szInput.size() && szInput[i] != '[')
+	{
+		szRetVal += szInput[i];
+		i++;
+	}
+	return szRetVal;
 }
 
 std::vector<std::string> TMLoader::splitString(const std::string szInString, char splitChar) const

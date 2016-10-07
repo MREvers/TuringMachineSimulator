@@ -4,13 +4,13 @@
 class DChar
 {
 public:
-    DChar(char base, int i);
-	DChar(char base, std::vector < std::string > is);
+    DChar(std::string base, int i);
+	DChar(std::string base, std::vector < std::string > is);
     ~DChar();
 
     bool operator==(const DChar& other) const;
 
-    char getBase() const;
+    std::string getBase() const;
     int getDecorations() const;
 	std::vector < std::string> getHeaders() const;
     void setDecorations(int i);
@@ -18,7 +18,7 @@ public:
     std::string getString() const;
 
 private:
-    char m_cBase;
+    std::string m_cBase;
 	std::vector<std::string> m_vecHeads;
     int m_iDecorations;
 };

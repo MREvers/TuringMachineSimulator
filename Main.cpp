@@ -11,6 +11,7 @@
 // Redo: Fix the DString memory leak.
 void main()
 {
+	bool DEBUG = true;
     TMLoader tml;
     std::vector<TransitionFunction*> tfs;
 	std::string startState;
@@ -38,15 +39,32 @@ void main()
 	*/
 
 	DString input("#");
-	input = (input + (new DChar('1', std::vector < std::string> { "2" })) +
-		+ (new DChar('1', std::vector < std::string> { "1" })) + "1#" + (new DChar('_', std::vector < std::string> { "1" })) + "#$");
+	input = (input + (new DChar("#*", std::vector < std::string> { "2","2" })) +
+		(new DChar("1", std::vector < std::string> { "1" })) +
+		(new DChar("#*", std::vector < std::string> { "2" })) +
+		(new DChar("_", std::vector < std::string> { "1",})) + 
+		(new DChar("#*", std::vector < std::string> { "2" })) +
+		(new DChar("$", std::vector < std::string> { "2" })) +
+		"#$");
 	tmTest.setInput(input);
     
+	if (DEBUG)
+	{
+		for (int i = 0; i < tfs.size(); i++)
+		{
+			tmTest.includeTransitionFunction(tfs[i]);
+			std::cout << "Loaded: " << i << "/" << tfs.size() << std::endl;
+		}
+	}
+	else
+	{
+		for (int i = 0; i < tfs.size(); i++)
+		{
+			tmTest.includeTransitionFunction(tfs[i]);
 
-    for (int i = 0; i < tfs.size(); i++)
-    {
-        tmTest.includeTransitionFunction(tfs[i]);
-    }
+		}
+	}
+
     std::vector<std::string> machineOutput;
 	int hi = 0;
     do

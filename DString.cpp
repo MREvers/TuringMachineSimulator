@@ -10,7 +10,7 @@ DString::DString(std::string base)
 {
     for (int i = 0; i < base.size(); i++)
     {
-        *this += new DChar(base[i], 0);
+        *this += new DChar((std::string(1, base[i])), 0);
     }
 }
 
@@ -34,7 +34,7 @@ DString& DString::operator+(std::string other)
 {
     for (int i = 0; i < other.size(); i++)
     {
-        DChar* newChar = new DChar(other[i], 0);
+        DChar* newChar = new DChar(std::string(1, other[i]), 0);
         *this += (newChar);
     }
     return *this;

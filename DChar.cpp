@@ -3,13 +3,13 @@
 
 
 
-DChar::DChar(char base, int i = 0)
+DChar::DChar(std::string base, int i = 0)
 {
     m_cBase = base;
 	m_vecHeads = std::vector<std::string>();
 }
 
-DChar::DChar(char base, std::vector<std::string> is)
+DChar::DChar(std::string base, std::vector<std::string> is)
 {
 	m_cBase = base;
 	m_vecHeads = is;
@@ -20,7 +20,7 @@ DChar::~DChar()
 {
 }
 
-char DChar::getBase() const
+std::string DChar::getBase() const
 {
     return m_cBase;
 }
