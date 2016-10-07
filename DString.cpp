@@ -44,7 +44,7 @@ DString& DString::operator+(DString other)
 {
 	for (int i = 0; i < other.size(); i++)
 	{
-		DChar* newChar = new DChar((other)[i].getBase(), (other)[i].getDecorations());
+		DChar* newChar = new DChar((other)[i].getBase(), (other)[i].getHeaders());
 		*this += (newChar);
 	}
 	return *this;

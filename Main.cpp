@@ -25,15 +25,21 @@ void main()
     tmTest.initialize("q0", "q5", 15);
     tmTest.setInput("101#1110");
 	*/
-	if (!tml.loadTFFile("Test2.txt", tfs, startState, endStates))
+	if (!tml.loadTFFile("Test3.txt", tfs, startState, endStates))
 	{
 		return;
 	}
 
 	TuringMachine tmTest(1);
 	tmTest.initialize(startState, endStates[0], 15);
-	DString input("#~~~");
-	input = (input + (new DChar('1', 1)) + "01|1110#~~~~" + (new DChar('_', 1)) + "#~~~~~~~" + (new DChar('_', 1)) + "#$");
+	/*
+	DString input("#");
+	input = (input + (new DChar('1', 1)) + "1|1#" + (new DChar('_', 1)) + "#" + (new DChar('_', 1)) + "#$");
+	*/
+
+	DString input("#");
+	input = (input + (new DChar('1', std::vector < std::string> { "2" })) +
+		+ (new DChar('1', std::vector < std::string> { "1" })) + "1#" + (new DChar('_', std::vector < std::string> { "1" })) + "#$");
 	tmTest.setInput(input);
     
 
@@ -46,7 +52,7 @@ void main()
     do
     {
        
-		if (hi % 2 == 0)
+		if (hi % 1 == 0)
 		{
 			machineOutput = tmTest.getDrawState();
 			system("cls");
@@ -54,10 +60,11 @@ void main()
 			{
 				std::cout << machineOutput[i] << std::endl;
 			}
+			std::cout << tmTest.getState() << std::endl;
 			std::cout << hi << " steps" << std::endl;
 		}
 		hi++;
-        //_sleep(15);
+        _sleep(150);
     } while (tmTest.stepForward());
     system("cls");
     machineOutput = tmTest.getDrawState();

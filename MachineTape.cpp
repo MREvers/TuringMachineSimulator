@@ -75,21 +75,37 @@ void MachineTape::setHeadPosition(int iHeadPos)
 
 std::vector<std::string> MachineTape::getDrawState(bool bFixed = true) const
 {
+	// Calculate the adjusted head pos
+	int apparentHeaderPos = 0;
+	
+
 	std::vector<std::string> szRetVal;
 	if ( (bFixed            ) &&
 	     (m_iHeaderPos >= 10) )
 	{
+		for (int i = m_iHeaderPos - 9; i <= m_iHeaderPos; i++)
+		{
+			apparentHeaderPos += m_szTape[i].getDecorations() + 1;
+		}
+
 		szRetVal.push_back(m_szTape.substr(m_iHeaderPos - 10, 20).getString());
-        szRetVal.push_back( std::string(10, ' ') + "^");
+        szRetVal.push_back( std::string(apparentHeaderPos, ' ') + "^");
 	}
 	else
 	{
+		for (int i = m_iHeaderPos - 9; i <= m_iHeaderPos; i++)
+		{
+			apparentHeaderPos += m_szTape[i].getDecorations() + 1;
+		}
+
         szRetVal.push_back(m_szTape.substr(0, 20).getString());
-        szRetVal.push_back(std::string(m_iHeaderPos, ' ') + "^");
+        szRetVal.push_back(std::string(apparentHeaderPos, ' ') + "^");
 	}
 
 	return szRetVal;
 }
+
+
 
 const DChar& MachineTape::getState() const
 {

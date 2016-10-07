@@ -1,4 +1,4 @@
-﻿  Main.cpp
-c:\users\matthew\documents\visual studio 2015\projects\turingmachinesim\turingmachinesim\main.cpp(40): warning C4018: '<': signed/unsigned mismatch
-  TuringMachineSim.vcxproj -> C:\Users\Matthew\Documents\Visual Studio 2015\Projects\TuringMachineSim\Debug\TuringMachineSim.exe
-  TuringMachineSim.vcxproj -> C:\Users\Matthew\Documents\Visual Studio 2015\Projects\TuringMachineSim\Debug\TuringMachineSim.pdb (Full PDB)
+﻿  Skipping... (no relevant changes detected)
+  MachineTape.cpp
+  TuringMachineSim.vcxproj -> C:\Users\Matthew\Documents\GitHub\TuringMachineSimulator\Debug\TuringMachineSim.exe
+  TuringMachineSim.vcxproj -> C:\Users\Matthew\Documents\GitHub\TuringMachineSimulator\Debug\TuringMachineSim.pdb (Full PDB)
