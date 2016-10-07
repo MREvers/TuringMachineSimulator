@@ -26,7 +26,7 @@ void main()
     tmTest.initialize("q0", "q5", 15);
     tmTest.setInput("101#1110");
 	*/
-	if (!tml.loadTFFile("Test3.txt", tfs, startState, endStates))
+	if (!tml.loadTFFile("Test4.txt", tfs, startState, endStates))
 	{
 		return;
 	}
@@ -38,6 +38,7 @@ void main()
 	input = (input + (new DChar('1', 1)) + "1|1#" + (new DChar('_', 1)) + "#" + (new DChar('_', 1)) + "#$");
 	*/
 
+	/* Test3
 	DString input("#");
 	input = (input + (new DChar("#*", std::vector < std::string> { "2","2" })) +
 		(new DChar("1", std::vector < std::string> { "1" })) +
@@ -48,7 +49,18 @@ void main()
 		(new DChar("$", std::vector < std::string> { "2" })) +
 		"#$");
 	tmTest.setInput(input);
-    
+    */
+
+	DString input("#");
+	input = (input + (new DChar("#*", std::vector < std::string> { "2" })) +
+		(new DChar("1", std::vector < std::string> { "1" })) +
+		"1" +
+		(new DChar("#*", 0)) +
+		(new DChar("_", std::vector < std::string> { "1", })) +
+		(new DChar("#*", 0)) +
+		(new DChar("$*", 0)) +
+		"#$");
+	tmTest.setInput(input);
 	if (DEBUG)
 	{
 		for (int i = 0; i < tfs.size(); i++)

@@ -57,5 +57,22 @@ void DChar::setDecorations(int i)
 
 std::string DChar::getString() const
 {
-    return std::string(this->getDecorations(), '.') + m_cBase;
+	std::string heads = "";
+	if (m_vecHeads.size() > 0)
+	{
+		heads = "[";
+		for (int i = 0; i < m_vecHeads.size(); i++)
+		{
+			heads += m_vecHeads[i];
+			if (i != m_vecHeads.size() - 1)
+			{
+				heads += ",";
+			}
+		}
+
+		heads += "]";
+	}
+	
+    //return std::string(this->getDecorations(), '.') + m_cBase;
+	return heads + m_cBase;
 }

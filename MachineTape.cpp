@@ -85,7 +85,7 @@ std::vector<std::string> MachineTape::getDrawState(bool bFixed = true) const
 	{
 		for (int i = m_iHeaderPos - 9; i <= m_iHeaderPos; i++)
 		{
-			apparentHeaderPos += m_szTape[i].getDecorations() + 1;
+			apparentHeaderPos += m_szTape[i].getString().size();
 		}
 
 		szRetVal.push_back(m_szTape.substr(m_iHeaderPos - 10, 20).getString());
@@ -95,7 +95,7 @@ std::vector<std::string> MachineTape::getDrawState(bool bFixed = true) const
 	{
 		for (int i = m_iHeaderPos - 9; i <= m_iHeaderPos; i++)
 		{
-			apparentHeaderPos += m_szTape[i].getDecorations() + 1;
+			apparentHeaderPos += m_szTape[i].getString().size();
 		}
 
         szRetVal.push_back(m_szTape.substr(0, 20).getString());
