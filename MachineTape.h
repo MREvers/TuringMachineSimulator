@@ -12,7 +12,7 @@ public:
 	MachineTape();
 	~MachineTape();
 
-	bool performTransform(TRANSITION headMoveMent, DChar* write);
+	bool performTransform(TRANSITION headMoveMent, DChar write);
 
     void setState(std::string szState);
 	void setState(DString szState);
@@ -25,6 +25,6 @@ private:
 	int m_iHeaderPos;
 	DString m_szTape;
 
-    bool writeChar(DChar* newRead);
+    bool writeChar(DChar newRead);
 };
 

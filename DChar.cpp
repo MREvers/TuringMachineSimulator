@@ -15,6 +15,15 @@ DChar::DChar(std::string base, std::vector<std::string> is)
 	m_vecHeads = is;
 }
 
+DChar::DChar(DChar base, std::vector<std::string> is)
+{
+   m_cBase = base.getBase();
+   m_vecHeads = base.getHeaders();
+   for (int i = 0; i < is.size(); i++)
+   {
+      m_vecHeads.push_back(is[i]);
+   }
+}
 
 DChar::~DChar()
 {

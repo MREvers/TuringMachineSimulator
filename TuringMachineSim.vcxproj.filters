@@ -36,6 +36,12 @@
     <ClCompile Include="DString.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TMSimulator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TMTapeFlattener.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TuringMachine.h">
@@ -57,6 +63,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StringExtensions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TMSimulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TMTapeFlattener.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

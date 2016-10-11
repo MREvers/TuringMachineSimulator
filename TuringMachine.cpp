@@ -138,7 +138,7 @@ STEPRESULT TuringMachine::performTransitionFunction(TransitionFunction *tf)
     bool bSuccess = true;
     for (int i = 0; i < m_iNumTapes; i++)
     {
-        bSuccess &= m_lstTapes[i]->performTransform(tf->getRangeHeadMove(i), tf->getRangeHeadValue(i));
+        bSuccess &= m_lstTapes[i]->performTransform(tf->getRangeHeadMove(i), *(tf->getRangeHeadValue(i)));
     }
 
     if (bSuccess)

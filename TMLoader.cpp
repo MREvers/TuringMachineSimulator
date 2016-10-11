@@ -146,7 +146,7 @@ std::string TMLoader::parseBase(std::string szInput) const
 	return szRetVal;
 }
 
-std::vector<std::string> TMLoader::splitString(const std::string szInString, char splitChar) const
+std::vector<std::string> TMLoader::splitString(const std::string szInString, char splitChar)
 {
     std::stringstream test(szInString);
     std::string segment;

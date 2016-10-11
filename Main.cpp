@@ -3,6 +3,8 @@
 #include <thread>
 #include "TMLoader.h"
 #include "TuringMachine.h"
+#include "TMTapeFlattener.h"
+#include "TMSimulator.h"
 
 // Todo: Organize TFs into a tree structure
 // Todo: Make it sort better.
@@ -11,101 +13,7 @@
 // Redo: Fix the DString memory leak.
 void main()
 {
-	bool DEBUG = true;
-    TMLoader tml;
-    std::vector<TransitionFunction*> tfs;
-	std::string startState;
-	std::vector<std::string> endStates;
-	/*
-    if (!tml.loadTFFile("Input2.txt", tfs))
-    {
-        return;
-    }
-   
-    TuringMachine tmTest(3);
-    tmTest.initialize("q0", "q5", 15);
-    tmTest.setInput("101#1110");
-	*/
-	if (!tml.loadTFFile("Test4.txt", tfs, startState, endStates))
-	{
-		return;
-	}
-
-	TuringMachine tmTest(1);
-	tmTest.initialize(startState, endStates[0], 15);
-	/*
-	DString input("#");
-	input = (input + (new DChar('1', 1)) + "1|1#" + (new DChar('_', 1)) + "#" + (new DChar('_', 1)) + "#$");
-	*/
-
-	/* Test3
-	DString input("#");
-	input = (input + (new DChar("#*", std::vector < std::string> { "2","2" })) +
-		(new DChar("1", std::vector < std::string> { "1" })) +
-		"1" +
-		(new DChar("#*", std::vector < std::string> { "2" })) +
-		(new DChar("_", std::vector < std::string> { "1",})) + 
-		(new DChar("#*", std::vector < std::string> { "2" })) +
-		(new DChar("$", std::vector < std::string> { "2" })) +
-		"#$");
-	tmTest.setInput(input);
-    */
-
-	DString input("#");
-	input = (input + (new DChar("#*", std::vector < std::string> { "2" })) +
-		(new DChar("1", std::vector < std::string> { "1" })) +
-		"1" +
-		(new DChar("#*", 0)) +
-		(new DChar("_", std::vector < std::string> { "1", })) +
-		(new DChar("#*", 0)) +
-		(new DChar("$*", 0)) +
-		"#$");
-	tmTest.setInput(input);
-	if (DEBUG)
-	{
-		for (int i = 0; i < tfs.size(); i++)
-		{
-			tmTest.includeTransitionFunction(tfs[i]);
-			std::cout << "Loaded: " << i << "/" << tfs.size() << std::endl;
-		}
-	}
-	else
-	{
-		for (int i = 0; i < tfs.size(); i++)
-		{
-			tmTest.includeTransitionFunction(tfs[i]);
-
-		}
-	}
-
-    std::vector<std::string> machineOutput;
-	int hi = 0;
-    do
-    {
-       
-		if (hi % 1 == 0)
-		{
-			machineOutput = tmTest.getDrawState();
-			system("cls");
-			for (int i = 0; i < 2; i++)
-			{
-				std::cout << machineOutput[i] << std::endl;
-			}
-			std::cout << tmTest.getState() << std::endl;
-			std::cout << hi << " steps" << std::endl;
-		}
-		hi++;
-        _sleep(150);
-    } while (tmTest.stepForward());
-    system("cls");
-    machineOutput = tmTest.getDrawState();
-    for (int i = 0; i < 2; i++)
-    {
-        std::cout << machineOutput[i] << std::endl;
-    }
-    std::cout << tmTest.getLastStepResult() << std::endl;
-	std::cout << tmTest.getState() << std::endl;
-	std::cout << hi << " steps" << std::endl;
-
-	std::cin.get();
+   TMSimulator tms;
+   tms.sim_loop();
+   std::cin.get();
 }

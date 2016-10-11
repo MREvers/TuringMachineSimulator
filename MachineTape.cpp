@@ -63,7 +63,7 @@ void MachineTape::setHeadPosition(int iHeadPos)
     {
         while (m_iHeaderPos != iHeadPos)
         {
-            performTransform(RIGHT, new DChar("_", 0));
+            performTransform(RIGHT, DChar("_", 0));
         }
     }
     else
@@ -112,7 +112,7 @@ const DChar& MachineTape::getState() const
 	return m_szTape[m_iHeaderPos];
 }
 
-bool MachineTape::performTransform(TRANSITION headMoveMent, DChar* write)
+bool MachineTape::performTransform(TRANSITION headMoveMent, DChar write)
 {
 	// Return whether the transformation was successful
 	bool bRetVal;
@@ -124,7 +124,7 @@ bool MachineTape::performTransform(TRANSITION headMoveMent, DChar* write)
 
 	if ((m_iHeaderPos + headMoveMent) >= 0)
 	{
-        writeChar(write);
+      writeChar(write);
 		m_iHeaderPos += headMoveMent;
 
 		bRetVal = true;
@@ -137,9 +137,9 @@ bool MachineTape::performTransform(TRANSITION headMoveMent, DChar* write)
     return bRetVal;
 }
 
-bool MachineTape::writeChar(DChar* newState)
+bool MachineTape::writeChar(DChar newState)
 {
 	//delete &m_szTape[m_iHeaderPos];
-    m_szTape[m_iHeaderPos] = *newState;
+   m_szTape.set(m_iHeaderPos, newState);
     return true;
 }

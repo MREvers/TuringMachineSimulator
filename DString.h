@@ -12,13 +12,15 @@ public:
 
     DString& operator+(std::string other);
 	DString& operator+(DString other);
-	DString& operator+(DChar* other);
-    DString& operator+=(DChar* other);
-    DChar& operator[](int i) const;
+	DString& operator+(DChar other);
+    DString& operator+=(DChar other);
+    const DChar& operator[](int i) const;
+
 
     int size() const;
 
     DString substr(int iStart, int iLength) const;
+    void set(int i, DChar other);
 
     std::string getString() const;
 

@@ -12,8 +12,8 @@ public:
 
 	std::vector<std::string> parseHeads(std::string szInput) const;
 	std::string parseBase(std::string szInput) const;
-    std::vector<std::string> splitString(const std::string szInString, char cSplitChar) const;
+   static std::vector<std::string> splitString(const std::string szInString, char cSplitChar);
 
-    TRANSITION convertCharToTranstion(char cMap) const;
+   TRANSITION convertCharToTranstion(char cMap) const;
 };
 

@@ -5,7 +5,8 @@ class DChar
 {
 public:
     DChar(std::string base, int i);
-	DChar(std::string base, std::vector < std::string > is);
+	 DChar(std::string base, std::vector < std::string > is);
+    DChar(DChar base, std::vector < std::string > is);
     ~DChar();
 
     bool operator==(const DChar& other) const;

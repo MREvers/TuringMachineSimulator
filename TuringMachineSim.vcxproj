@@ -147,6 +147,8 @@
     <ClCompile Include="MachineTape.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="TMLoader.cpp" />
+    <ClCompile Include="TMSimulator.cpp" />
+    <ClCompile Include="TMTapeFlattener.cpp" />
     <ClCompile Include="TransitionFunction.cpp" />
     <ClCompile Include="TuringMachine.cpp" />
   </ItemGroup>
@@ -156,6 +158,8 @@
     <ClInclude Include="MachineTape.h" />
     <ClInclude Include="StringExtensions.h" />
     <ClInclude Include="TMLoader.h" />
+    <ClInclude Include="TMSimulator.h" />
+    <ClInclude Include="TMTapeFlattener.h" />
     <ClInclude Include="TransitionFunction.h" />
     <ClInclude Include="TuringMachine.h" />
   </ItemGroup>

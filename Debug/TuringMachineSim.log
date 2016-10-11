@@ -1,5 +1,6 @@
-﻿  DChar.cpp
-c:\users\matthew\documents\github\turingmachinesimulator\dchar.cpp(34): warning C4018: '<': signed/unsigned mismatch
-c:\users\matthew\documents\github\turingmachinesimulator\dchar.cpp(64): warning C4018: '<': signed/unsigned mismatch
+﻿  TMSimulator.cpp
+c:\users\matthew\documents\github\turingmachinesimulator\tmsimulator.cpp(57): warning C4018: '<': signed/unsigned mismatch
+c:\users\matthew\documents\github\turingmachinesimulator\tmsimulator.cpp(79): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(1266): note: see declaration of '_sleep'
   TuringMachineSim.vcxproj -> C:\Users\Matthew\Documents\GitHub\TuringMachineSimulator\Debug\TuringMachineSim.exe
   TuringMachineSim.vcxproj -> C:\Users\Matthew\Documents\GitHub\TuringMachineSimulator\Debug\TuringMachineSim.pdb (Full PDB)
