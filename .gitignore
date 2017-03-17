@@ -3,3 +3,7 @@
 ################################################################################
 
 /Debug/TuringMachineSim.exe
+/Debug/TMTapeFlattener.obj
+/Debug/TMSimulator.obj
+/Release/TuringMachineSim.tlog
+/Release
