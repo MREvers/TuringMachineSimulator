@@ -19,6 +19,7 @@ TMSimulator::~TMSimulator()
 
 void TMSimulator::sim_loop()
 {
+   // Load a turing machine
    TMLoader tml;
    std::vector<TransitionFunction*> tfs;
    std::string startState;
@@ -34,15 +35,16 @@ void TMSimulator::sim_loop()
    {
       return;
    }
+   system("cls");
 
-   std::cout << "num_tapes is the number of tapes to simulate." << std::endl;
+   std::cout << "num_tapes is the number of tapes to simulate." << std::endl << std::endl;
    std::cout << "num_tapes_sim is the number of tapes simulated on ONE tape." << std::endl;
-   std::cout << "1 If not flattened." << std::endl;
+   std::cout << "1 If not flattened." << std::endl << std::endl;
 
    std::cout << "Symbol_Generation is the number of times the TM has been flattened." << std::endl;
-   std::cout << "1 If not flattened ever." << std::endl;
+   std::cout << "1 If not flattened ever." << std::endl << std::endl;
 
-   std::cout << "Sleep is the delay between transition functions." << std::endl;
+   std::cout << "Sleep is the delay between transition functions." << std::endl << std::endl;
    std::cout << "input is the string input." << std::endl;
    std::cout << "Enter input: <num_tapes>, <num_tapes_sim>, <Symbol_Generation>, <sleep>; <input>" << std::endl;
    std::getline(std::cin, input);
@@ -72,7 +74,6 @@ void TMSimulator::sim_loop()
             {
                dszInput = DString(trim(splitInput[1]));
             }
-            
 
             TuringMachine tm(tapes);
             tm.initialize(startState, endStates[0], 15);
