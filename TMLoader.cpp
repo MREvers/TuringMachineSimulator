@@ -28,6 +28,10 @@ bool TMLoader::loadTFFile(std::string fileName, std::vector<TransitionFunction*>
     */
 
     std::ifstream infile(fileName);
+    if (!infile.good())
+    {
+       return false;
+    }
     std::string line;
 
     std::string name;
@@ -52,6 +56,10 @@ bool TMLoader::loadTFFile(std::string fileName, std::vector<TransitionFunction*>
                 name = trim(splitLine[1]);
                 readingState++;
             }
+            else
+            {
+               return false;
+            }
            
         }
         else if (readingState == 1)
@@ -61,6 +69,10 @@ bool TMLoader::loadTFFile(std::string fileName, std::vector<TransitionFunction*>
             {
                 startState = trim(splitLine[1]);
                 readingState++;
+            }
+            else
+            {
+               return false;
             }
         }
         else if (readingState == 2)
@@ -73,6 +85,10 @@ bool TMLoader::loadTFFile(std::string fileName, std::vector<TransitionFunction*>
                     endStates.push_back(trim(splitLine[i]));
                 }
                 readingState++;
+            }
+            else
+            {
+               return false;
             }
         }
         else if (readingState >= 3)

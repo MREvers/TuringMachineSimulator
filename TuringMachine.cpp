@@ -67,7 +67,7 @@ std::string TuringMachine::getLastStepResult()const
 std::vector<std::string> TuringMachine::getDrawState() const
 {
     std::vector < std::string> szRetVal;
-    for (int i = 0; i != m_iNumTapes; i++)
+    for (int i = m_iNumTapes-1; i != -1; i--)
     {
         std::vector<std::string> szTapeState = m_lstTapes[i]->getDrawState(true);
         szRetVal.push_back(szTapeState[0]);
